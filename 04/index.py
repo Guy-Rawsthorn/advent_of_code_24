@@ -9,19 +9,19 @@ def main():
         print(row)
         print(values)
         for list_index, item in enumerate(values):
-            # if item == "X":
+            if item == "X":
                 
-            #     print(f"found X at {list_index}")
-                # check_horizontal(row, values, list_index, direction="right")
-                # check_horizontal(row, values, list_index, direction="left")
+                print(f"found X at {list_index}")
+                check_horizontal(row, values, list_index, direction="right")
+                check_horizontal(row, values, list_index, direction="left")
                 
-                # check_vertical(grid, row, values, list_index, direction="down")
-                # check_vertical(grid, row, values, list_index, direction="up")
+                check_vertical(grid, row, values, list_index, direction="down")
+                check_vertical(grid, row, values, list_index, direction="up")
 
-                # check_diagonal(grid, row, values, list_index, direction="se")
-                # check_diagonal(grid, row, values, list_index, direction="sw")
-                # check_diagonal(grid, row, values, list_index, direction="ne")
-                # check_diagonal(grid, row, values, list_index, direction="nw")
+                check_diagonal(grid, row, values, list_index, direction="se")
+                check_diagonal(grid, row, values, list_index, direction="sw")
+                check_diagonal(grid, row, values, list_index, direction="ne")
+                check_diagonal(grid, row, values, list_index, direction="nw")
             
             if item == "A":
                 print(f"found A at {list_index}")

@@ -9,19 +9,19 @@ def main():
         print(row)
         print(values)
         for list_index, item in enumerate(values):
-            if item == "X":
+            # if item == "X":
                 
-                print(f"found X at {list_index}")
-                check_horizontal(row, values, list_index, direction="right")
-                check_horizontal(row, values, list_index, direction="left")
+            #     print(f"found X at {list_index}")
+                # check_horizontal(row, values, list_index, direction="right")
+                # check_horizontal(row, values, list_index, direction="left")
                 
-                check_vertical(grid, row, values, list_index, direction="down")
-                check_vertical(grid, row, values, list_index, direction="up")
+                # check_vertical(grid, row, values, list_index, direction="down")
+                # check_vertical(grid, row, values, list_index, direction="up")
 
-                check_diagonal(grid, row, values, list_index, direction="se")
-                check_diagonal(grid, row, values, list_index, direction="sw")
-                check_diagonal(grid, row, values, list_index, direction="ne")
-                check_diagonal(grid, row, values, list_index, direction="nw")
+                # check_diagonal(grid, row, values, list_index, direction="se")
+                # check_diagonal(grid, row, values, list_index, direction="sw")
+                # check_diagonal(grid, row, values, list_index, direction="ne")
+                # check_diagonal(grid, row, values, list_index, direction="nw")
             
             if item == "A":
                 print(f"found A at {list_index}")
@@ -56,12 +56,16 @@ def check_part_2(grid, row, values, list_index):
     ne = grid[row + ne_counter.adjust()[1]][list_index + ne_counter.x_value]
     nw = grid[row + nw_counter.adjust()[1]][list_index + nw_counter.x_value]
     
-    a = []
-    a.extend([se, sw, nw, ne])
-    if a.count("M") == 2 and a.count("S") == 2:    
-        print(f"found valid PART2 X-MAS on row {row} starting at {list_index}")
-        global part2_count
-        part2_count += 1
+    a = (se, nw)
+    print(a)
+    b = (ne, sw)
+    print(b)
+
+    if a.count("M") ==1 and a.count("S")==1:
+        if b.count("M") ==1 and b.count("S")==1:
+            print(f"found valid PART2 X-MAS on row {row} starting at {list_index}")
+            global part2_count
+            part2_count += 1
 
 def check_diagonal(grid, row, values, list_index, direction):
     print(f"analyzing {direction} diagonal {row}, {list_index}")
